@@ -16,9 +16,9 @@ export default class UploadProject extends Component {
         this.state = {
             projectName : '',
             academicYear : '2018-2019',
-            language : 'nodejs',
+            language : 'node',
             languageVersion : '',
-            databaseName : 'mysql',
+            databaseName : 'mongo',
             databaseVersion : '',
             projectFile : null
         }
@@ -32,13 +32,13 @@ export default class UploadProject extends Component {
         })
     }
 
-    //Select
-    handleSelectionChange = (e) =>{
-        this.setState({
-            ...this.state,
-            [e.target.name] : e.target.value
-        })
-    }
+    // //Select
+    // handleSelectionChange = (e) =>{
+    //     this.setState({
+    //         ...this.state,
+    //         [e.target.name] : e.target.value
+    //     })
+    // }
 
     //File
     handleFileChange = (e) =>{
@@ -101,18 +101,18 @@ export default class UploadProject extends Component {
 
 
                    <label>Academic Year : </label>
-                   <select value={this.state.academicYear} onChange={this.handleSelectionChange}>
-                       <option value="2018-2019">2018-2019</option>
-                       <option value="2019-2020">2019-2020</option>
-                       <option value="2020-2021">2020-2021</option>
+                   <select value={this.state.academicYear} onChange={(e)=>this.setState({academicYear: e.target.value})}>
+                       <option value="2018-2019" name="academicYear">2018-2019</option>
+                       <option value="2019-2020" name="academicYear">2019-2020</option>
+                       <option value="2020-2021" name="academicYear">2020-2021</option>
                    </select><br/><br/>
 
 
                    <label>Language : </label>
-                   <select value={this.state.language} onChange={this.handleSelectionChange}>
-                       <option value="nodejs">Node.js-Express</option>
-                       <option value="spring">JavaEE-Spring</option>
-                       <option value="laravel">PHP-Laravel</option>
+                   <select value={this.state.language} onChange={(e)=>this.setState({language: e.target.value})}>
+                       <option value="node" name="language">Node.js-Express</option>
+                       <option value="spring" name="language">JavaEE-Spring</option>
+                       <option value="laravel" name="language">PHP-Laravel</option>
                    </select><br/><br/>
 
 
@@ -121,9 +121,9 @@ export default class UploadProject extends Component {
 
 
                    <label>Database Name : </label>
-                   <select value={this.state.databaseName} onChange={this.handleSelectionChange}>
-                       <option value="mysql">Mysql</option>
-                       <option value="mongodb">MongoDB</option>
+                   <select value={this.state.databaseName} onChange={(e)=>this.setState({databaseName:e.target.value})}>
+                       <option value="mysql" name="databaseName">Mysql</option>
+                       <option value="mongo" name="databaseName">MongoDB</option>
                    </select><br/><br/>
 
 

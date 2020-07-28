@@ -17,7 +17,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
-        <Link to="/uploadproject">UploadProject</Link>
+        <Link to="/uploadproject">UploadProject</Link> <br></br><br></br>
         <Link to="/viewallprojects">ViewAllProjects</Link>
         <Route path="/uploadproject">
           <UploadProject/>
